@@ -4,7 +4,7 @@ const {
   getAdafruitLightData,
   getAdafruitThermalData,
 } = require("../controllers/adafruitController");
-const sensorRepository = require("../models/SensorModel");
+const sensorRepository = require("../repository/sensorRepository");
 
 const {
   getHistory,

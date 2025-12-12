@@ -124,13 +124,15 @@ export default function HomeScreen() {
     
   };
 useEffect(() => {
-    const intervalId = setInterval(() => {
-      handleRefresh();
-    }, 5000);
+  if (!isAuthenticated) return;  // ❗ Chưa đăng nhập thì KHÔNG chạy interval
 
-    // Dọn dẹp timer khi thoát màn hình để tránh lỗi tràn bộ nhớ
-    return () => clearInterval(intervalId);
-  }, []);
+  const intervalId = setInterval(() => {
+    handleRefresh();
+  }, 3000);
+
+  return () => clearInterval(intervalId);
+}, [isAuthenticated]);
+
   useFocusEffect(
     useCallback(() => {
       handleRefresh();
