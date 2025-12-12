@@ -1,0 +1,129 @@
+## 📘 HƯỚNG DẪN SỬ DỤNG HỆ THỐNG
+
+Phần này hướng dẫn cài đặt môi trường, chạy web server, backend, cũng như cách cài và chạy ứng dụng Android (bản Expo cũ).
+
+---
+
+# 1️⃣ YÊU CẦU MÔI TRƯỜNG
+
+### 🐍 Python
+- Phiên bản khuyến nghị: **Python 3.10+**
+- Kiểm tra:
+```bash
+python --version
+🐘 PostgreSQL
+
+Phiên bản khuyến nghị: PostgreSQL 17.X
+Dùng kèm công cụ: pgAdmin 4
+
+Kiểm tra:
+
+psql --version
+
+📦 Node.js & NPM
+
+Node.js (LTC)
+
+Kiểm tra:
+
+node --version
+npm --version
+
+
+⚠️ Lưu ý: Project sử dụng expo-version cũ, vì vậy Node quá mới (20+) có thể gây lỗi.
+
+2️⃣ CÀI ĐẶT BACKEND
+Cài dependencies Python:
+pip install -r requirements.txt
+
+Cấu hình PostgreSQL:
+
+Tạo database mới trên pgAdmin
+
+Cập nhật thông tin kết nối trong file .env (host, user, password, database)
+
+Chạy file migration / script tạo bảng (nếu có)
+
+Chạy server:
+python app.py
+
+
+Backend sẽ khởi động tại:
+
+http://localhost:5000
+
+3️⃣ CÀI ĐẶT WEB FRONTEND (NẾU DỰ ÁN CÓ PHẦN WEB)
+Cài dependencies:
+npm install
+
+Chạy web:
+npm run dev
+
+
+Web sẽ chạy tại:
+
+http://localhost:3000
+
+4️⃣ ỨNG DỤNG ANDROID (EXPO)
+
+Do ứng dụng được phát triển bằng Expo phiên bản cũ, nên:
+
+Không chạy được với Expo Go mới nhất
+
+Phải tải file Expo Go phiên bản cũ (đã được nhóm đóng gói và upload)
+
+📥 Link tải bản Expo phù hợp (Android):
+https://drive.google.com/your-link-here
+
+
+⚠️ Thầy cần cài đúng file .apk này, nếu không app sẽ không mở được.
+
+🔧 Cách chạy:
+
+Cài Expo Go (bản trong link Drive)
+
+Mở Expo Go
+
+Quét QR code / nhập link từ lệnh:
+
+expo start
+
+
+Ứng dụng sẽ hiển thị giao diện điều khiển nhà kính:
+
+Xem nhiệt độ, độ ẩm
+
+Bật/tắt thiết bị
+
+Xem biểu đồ môi trường
+
+5️⃣ CẤU TRÚC THƯ MỤC
+project/
+│── backend/         # Python + API
+│── frontend/        # Web UI (nếu có)
+│── mobile/          # App Expo
+│── database/        # Script SQL
+│── README.md
+│── requirements.txt
+
+6️⃣ LƯU Ý QUAN TRỌNG
+
+Phải chạy backend trước thì app/web mới hoạt động
+
+PostgreSQL phải chạy đúng port (mặc định 5432)
+
+Node và Expo cần đúng phiên bản, nếu không sẽ lỗi dependency
+
+Nếu app Expo báo lỗi version → chắc chắn do dùng sai app Expo Go
+
+7️⃣ DEMO VIDEO
+
+Giảng viên có thể xem video demo trong link Drive (nếu nhóm có):
+
+https://drive.google.com/your-demo-link
+
+
+---
+
+Nếu bạn muốn, mình có thể **thêm hình minh họa**, thêm **QR code**, hoặc viết theo format báo cáo trường bạn yêu cầu.  
+Chỉ cần gửi mình link APK thật + dự án dùng những công nghệ nào, mình chỉnh lại hoàn toàn theo project
